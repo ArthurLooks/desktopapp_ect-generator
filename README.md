@@ -116,7 +116,11 @@ uv run main.py
 Na pasta do projeto:
 
 ```bash
-pyinstaller --onefile --windowed --name "GeradorPDF" --icon=favicon.ico --add-data "favicon.ico;." --collect-all customtkinter --collect-all tkinterdnd2 main.py
+pyinstaller --onefile --windowed --name "GeradorPDF"
+--icon=favicon.ico
+--add-data "favicon.ico;."
+--collect-all customtkinter
+--collect-all tkinterdnd2 main.py
 ```
 
 ### O que cada flag faz:
