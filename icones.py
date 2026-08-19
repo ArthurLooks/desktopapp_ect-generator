@@ -134,21 +134,17 @@ def icone_documento(tamanho=18, cor="#FFFFFF"):
     return _finalizar(img, tamanho)
 
 
-def icone_pdf_exportar(tamanho=20, cor="#FFFFFF"):
-    """Documento com seta para baixo (gerar/exportar PDF)."""
+def icone_download(tamanho=20, cor="#FFFFFF"):
+    """Seta apontando para baixo sobre uma bandeja/base - ícone clássico de download."""
     img, d, t = _nova_tela(tamanho)
-    largura = int(t * 0.08)
-    dobra = t * 0.22
-    pontos = [
-        (t * 0.22, t * 0.08), (t * 0.62 - dobra, t * 0.08), (t * 0.62, t * 0.08 + dobra),
-        (t * 0.62, t * 0.56), (t * 0.22, t * 0.56), (t * 0.22, t * 0.08),
-    ]
-    d.line(pontos, fill=cor, width=largura, joint="curve")
-    d.line([t * 0.62 - dobra, t * 0.08, t * 0.62 - dobra, t * 0.08 + dobra, t * 0.62, t * 0.08 + dobra],
+    largura = int(t * 0.10)
+    cx = t * 0.5
+    # haste vertical da seta
+    d.line([cx, t * 0.12, cx, t * 0.58], fill=cor, width=largura, joint="curve")
+    # ponta da seta
+    d.line([cx - t * 0.22, t * 0.38, cx, t * 0.62], fill=cor, width=largura, joint="curve")
+    d.line([cx + t * 0.22, t * 0.38, cx, t * 0.62], fill=cor, width=largura, joint="curve")
+    # bandeja/base
+    d.line([t * 0.14, t * 0.78, t * 0.14, t * 0.88, t * 0.86, t * 0.88, t * 0.86, t * 0.78],
            fill=cor, width=largura, joint="curve")
-    # seta de exportar
-    cx = t * 0.60
-    d.line([cx, t * 0.62, cx, t * 0.92], fill=cor, width=largura, joint="curve")
-    d.line([cx, t * 0.92, cx - t * 0.14, t * 0.78], fill=cor, width=largura, joint="curve")
-    d.line([cx, t * 0.92, cx + t * 0.14, t * 0.78], fill=cor, width=largura, joint="curve")
     return _finalizar(img, tamanho)

@@ -246,7 +246,7 @@ class GeradorPDFApp(JanelaBase):
             "lixeira": ctk.CTkImage(icones.icone_lixeira(cor=COR_ICONE), size=(18, 18)),
             "lixeira_tudo": ctk.CTkImage(icones.icone_lixeira(cor=COR_ICONE, com_x=True), size=(18, 18)),
             "documento": ctk.CTkImage(icones.icone_documento(cor=COR_ICONE), size=(18, 18)),
-            "pdf_exportar": ctk.CTkImage(icones.icone_pdf_exportar(cor=COR_ICONE), size=(20, 20)),
+            "download": ctk.CTkImage(icones.icone_download(cor=COR_ICONE), size=(20, 20)),
         }
 
     # ------------------------------------------------------------------
@@ -402,7 +402,7 @@ class GeradorPDFApp(JanelaBase):
         self.botao_gerar = ctk.CTkButton(
             frame,
             text="Gerar PDF",
-            image=self.icones["pdf_exportar"],
+            image=self.icones["download"],
             compound="left",
             anchor="center",
             command=self.iniciar_geracao_pdf,
