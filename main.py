@@ -146,7 +146,7 @@ def obter_pasta_config() -> str:
     pode estar em um local somente leitura (ex: pasta compartilhada em rede).
     """
     base = os.getenv("APPDATA") or os.path.expanduser("~")
-    pasta = os.path.join(base, "GeradorPDF_QA")
+    pasta = os.path.join(base, ".gerador-pdf")
     os.makedirs(pasta, exist_ok=True)
     return pasta
 

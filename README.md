@@ -6,7 +6,7 @@ pesados. Selecione as imagens, ajuste a ordem, e gere um PDF em segundos.
 
 **Alguns usos comuns:**
 
-- **QA / Testes**, documentar evidências de casos de teste para anexar no ALM Octane,
+- QA / Testes, documentar evidências de casos de teste para anexar no ALM Octane,
   Jira, TestRail ou qualquer ferramenta de gestão de testes.
 - Manuais e tutoriais visuais (passo a passo em imagens).
 - Relatórios fotográficos (vistorias, inspeções, obras).

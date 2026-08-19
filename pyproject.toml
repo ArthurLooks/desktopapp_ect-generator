@@ -1,7 +1,7 @@
 [project]
 name = "gerador-pdf"
 version = "0.2.0"
-description = "Gerador de PDF a partir de imagens — galeria com prévia, ordenação, capa personalizável e exportação otimizada em PDF."
+description = "Gerador de PDF a partir de imagens, galeria com prévia, ordenação, capa personalizável e exportação otimizada em PDF."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
