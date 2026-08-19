@@ -142,7 +142,7 @@ def obter_pasta_config() -> str:
     """
     Pasta gravável para guardar preferências do usuário (capa personalizada).
     Usa %APPDATA% no Windows (padrão para dados de aplicativo por usuário) e
-    a pasta pessoal em outros sistemas - nunca a pasta do próprio .exe, que
+    a pasta pessoal em outros sistemas, nunca a pasta do próprio .exe, que
     pode estar em um local somente leitura (ex: pasta compartilhada em rede).
     """
     base = os.getenv("APPDATA") or os.path.expanduser("~")

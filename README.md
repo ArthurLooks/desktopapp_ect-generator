@@ -1,7 +1,7 @@
 # Gerador de PDF
 
 Aplicativo desktop leve para compilar várias imagens em um único PDF bem
-formatado — sem precisar de internet, conta ou instalação de programas
+formatado, sem precisar de internet, conta ou instalação de programas
 pesados. Selecione as imagens, ajuste a ordem, e gere um PDF em segundos.
 
 **Alguns usos comuns:**
@@ -53,33 +53,33 @@ uv run main.py
 
 ## 2. Como usar
 
-1. Clique em **"Selecionar Pasta"** (carrega todas as imagens de uma pasta)
-   ou **"Adicionar Arquivos"** (seleciona imagens específicas) — os dois
-   abrem a janela **nativa** do sistema operacional. Você também pode
+1. Clique em "Selecionar Pasta" (carrega todas as imagens de uma pasta)
+   ou "Adicionar Arquivos" (seleciona imagens específicas), os dois
+   abrem a janela nativa do sistema operacional. Você também pode
    arrastar os arquivos direto do Explorador de Arquivos para a galeria.
-2. As imagens aparecem como **cartões de tamanho padronizado**, cada um com
-   miniatura, numeração de ordem e nome do arquivo — facilita identificar
+2. As imagens aparecem como cartões de tamanho padronizado, cada um com
+   miniatura, numeração de ordem e nome do arquivo, facilita identificar
    cada imagem mesmo quando o nome é genérico (ex: prints de tela).
 3. Elas são ordenadas automaticamente por nome (ordenação natural:
-   `imagem_2` vem antes de `imagem_10`). Se preferir, use **"Ordenar por
-   Data"** para reordenar pela data de criação do arquivo.
+   `imagem_2` vem antes de `imagem_10`). Se preferir, use "Ordenar por
+   Data" para reordenar pela data de criação do arquivo.
 4. Ajuste a ordem manualmente:
-   - Clique em um cartão para selecioná-lo (**Ctrl+clique** para vários,
-     **Shift+clique** para um intervalo) — a borda azul marca a seleção;
-   - Use **"Mover Antes"** / **"Mover Depois"** para reordenar os
+   - Clique em um cartão para selecioná-lo (Ctrl+clique para vários,
+     Shift+clique para um intervalo), a borda azul marca a seleção;
+   - Use "Mover Antes" / "Mover Depois" para reordenar os
      selecionados um passo antes/depois na sequência final do PDF;
-   - Ou **arraste o cartão** com o mouse até a posição desejada.
-5. Use **"Remover Selecionados"** para tirar apenas os cartões marcados, ou
-   **"Remover Todos"** para limpar a galeria inteira (pede confirmação).
-6. (Opcional) Preencha **"Título do Documento"** que aparece no cabeçalho de
+   - Ou arraste o cartão com o mouse até a posição desejada.
+5. Use "Remover Selecionados" para tirar apenas os cartões marcados, ou
+   "Remover Todos" para limpar a galeria inteira (pede confirmação).
+6. (Opcional) Preencha "Título do Documento" que aparece no cabeçalho de
    cada página do PDF (ex: o ID de um caso de teste, ou o nome do relatório).
-7. (Opcional) Clique em **"Configurar Capa"** para escolher uma imagem que
-   vai virar a primeira página do PDF (uma capa, um índicem, a imagem que você preferir). Essa configuração **fica salva na sua máquina**, continua disponível da próxima vez que você abrir o
+7. (Opcional) Clique em "Configurar Capa" para escolher uma imagem que
+   vai virar a primeira página do PDF (uma capa, um índicem, a imagem que você preferir). Essa configuração fica salva na sua máquina, continua disponível da próxima vez que você abrir o
    app, sem precisar selecionar de novo.
-8. Clique em **"Gerar PDF"**, escolha onde salvar, e aguarde a barra de
+8. Clique em "Gerar PDF", escolha onde salvar, e aguarde a barra de
    progresso. Cada imagem vira uma página A4, redimensionada
    proporcionalmente para não cortar nem distorcer, numerada como "Imagem X
-   de Y", **o nome original do arquivo nunca é impresso no PDF**, já que
+   de Y", o nome original do arquivo nunca é impresso no PDF, já que
    nomes de arquivo (principalmente de prints de tela) costumam ser
    genéricos e sem valor para quem revisa o documento depois.
 
@@ -99,7 +99,7 @@ uv run main.py
 
 - Arquivos cujo caminho completo passa de 260 caracteres (um limite prático
   que costuma causar falha de leitura em diversos sistemas, não só no
-  Windows) são detectados e ignorados **antes** de tentar abri-los, com um
+  Windows) são detectados e ignorados antes de tentar abri-los, com um
   aviso claro explicando o motivo e como resolver.
 - Se uma imagem estiver corrompida ou for removida do disco entre a seleção
   e a geração, ela é pulada (com aviso ao final) em vez de travar ou
@@ -116,15 +116,8 @@ uv run main.py
 Na pasta do projeto:
 
 ```bash
-pyinstaller --onefile --windowed --name "GeradorPDF" ^
-  --icon=favicon.ico ^
-  --add-data "favicon.ico;." ^
-  --collect-all customtkinter ^
-  --collect-all tkinterdnd2 ^
-  main.py
+pyinstaller --onefile --windowed --name "GeradorPDF" --icon=favicon.ico --add-data "favicon.ico;." --collect-all customtkinter --collect-all tkinterdnd2 main.py
 ```
-
-(No Linux/Mac, troque o `^` de quebra de linha por `\` e `;.` por `:.`)
 
 ### O que cada flag faz:
 
@@ -133,7 +126,7 @@ pyinstaller --onefile --windowed --name "GeradorPDF" ^
 - `--windowed`: não abre o console preto do CMD por trás da interface gráfica.
 - `--icon` / `--add-data`: define o ícone do arquivo `.exe` e também embute
   o `.ico` para uso como ícone da janela/barra de tarefas em tempo de
-  execução (veja `caminho_do_recurso()` no código).
+  execução.
 - `--collect-all customtkinter`: garante que os arquivos de tema (`.json`) do
   CustomTkinter sejam incluídos no executável (sem isso, o app abre em branco
   ou dá erro de "theme not found").
@@ -143,12 +136,12 @@ pyinstaller --onefile --windowed --name "GeradorPDF" ^
 ### Resultado
 
 O executável final fica em `dist/GeradorPDF.exe`. Copie apenas esse arquivo
-para onde precisar usá-lo — ele já contém o Python e todas as dependências
+para onde precisar usá-lo, ele já contém o Python e todas as dependências
 embutidas, sem precisar instalar nada na máquina de destino.
 
 ### Onde ficam as preferências salvas (capa personalizada)
 
-O app grava a configuração de capa em `%APPDATA%\GeradorPDF_QA\` no Windows
+O app grava a configuração de capa em `%APPDATA%\.gerador-pdf\` no Windows
 (ou na pasta pessoal do usuário em outros sistemas), nunca ao lado do
 `.exe`, que pode estar num local somente leitura (ex: pasta compartilhada em
 rede). Isso significa que a configuração é por usuário/máquina, e persiste
@@ -175,8 +168,8 @@ gere novamente com `--windowed`.
 
 O código é organizado em:
 
-- **Funções utilitárias** (ordenação natural, cálculo de redimensionamento,
-  limite de caminho, persistência de configuração) — sem dependência da
+- **Funções utilitárias** - (ordenação natural, cálculo de redimensionamento,
+  limite de caminho, persistência de configuração), sem dependência da
   interface, fáceis de testar isoladamente.
 - **`icones.py`** — biblioteca própria de ícones (desenhados com Pillow, não
   emojis), garantindo tamanho e estilo idênticos em todos os botões,
@@ -186,6 +179,6 @@ O código é organizado em:
   arquivos, ordenação, galeria, geração de PDF).
 - **Classe `JanelaConfigCapa`** — diálogo de configuração da capa
   personalizada (seleção de uma imagem), com persistência em disco.
-- Carregamento de imagens e geração de PDF rodam em **threads separadas com
+  Carregamento de imagens e geração de PDF rodam em **threads separadas com
   pool de processamento paralelo**, para não travar a interface e acelerar
   o trabalho com muitos arquivos.
